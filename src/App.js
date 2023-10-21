@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import Navbar from './Pages/Navbar';
+import { Route, Routes } from 'react-router-dom';
+import Filtermenu from './Pages/components/Filtermenu';
+import Preloader from './Pages/Preloader';
+import Login from './auth/Login';
+import Signup from './auth/Signup';
+import Error from './Pages/Error';
 
 function App() {
+
+  const [loader, setLoader] = useState(false)
+
+  setTimeout(() => {
+    setLoader(true)
+  }, 2000)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+      {
+        loader ? <div>
+          <Navbar />
+          <Routes>
+            <Route path='/' exact element={<Filtermenu />} />
+            <Route path='/login' exact element={<Login />} />
+            <Route path='/signup' exact element={<Signup />} />
+            <Route path='*' exact element={<Error />} />
+
+          </Routes>
+        </div> : <Preloader />
+      }
+    </>
+
   );
 }
 

@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&family=Open+Sans:wght@300&family=Poppins&display=swap');
+
+* {
+    font-family: 'Mukta', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.filter_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0rem auto;
+    background-color: black;
+    padding: 1rem;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.filter_menu li {
+    text-transform: capitalize;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.paggination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    background-color: black;
+    position: fixed;
+    bottom: 0rem;
+    padding: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.image:hover {
+    transform: scale(1.1);
+    transition: all 1s linear;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* ========Error Page =========== */
+
+.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15vh;
+    width: 400px;
+    height: 400px;
+
+}
+
+.error_dev {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
