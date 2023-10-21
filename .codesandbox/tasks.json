@@ -11,7 +11,7 @@
   "tasks": {
     "start": {
       "name": "start",
-      "command": "npm run start",
+      "command": "npm run start webpack-dev-server -d --watch --history-api-fallback --host $IP --port $PORT",
       "runAtStart": true,
       "preview": {
         "port": 3000
